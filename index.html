@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAK VISA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px;
+            min-height: calc(100vh - 100px);
+            
+        }
+
+        .header {
+            top: 0;
+            background-color: white;
+            border-bottom: 2px solid #e3e3e39e;
+            margin: 0 auto;
+            padding: 6px 16px;
+            position: fixed;
+            width: 95%;
+            z-index: 99;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .menu-container {
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: white;
+            border-top: 2px solid #e3e3e39e;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            position: relative;
+            padding: 33px 30px 20px 30px;
+            background-color: #f7f7f7;
+            max-width: 650px;
+            margin: auto;
+            margin-top: 100px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .blue-rect {
+            width: 60px;
+            height: 5px;
+            background-color: #0068ac;
+            position: absolute;
+            top: 0;
+            left: 30px;
+        }
+
+        .content:hover {
+            background-color: white;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .reference-number {
+            color: #0068ac;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .horizontal-line {
+            width: 100%;
+            border-top: 1px solid #0000000d;
+            margin-bottom: 16px;
+        }
+
+        .grid-container-0 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            padding: 20px;
+        }
+
+        .grid-item-0 {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            color: #626262;
+        }
+
+        .item-0-1 {
+            grid-row: span 4;
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pair {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+        .font-bold{
+            font-weight: bold;
+        }
+        .label {
+            color: #626262;
+        }
+
+        .value {
+            color: #626262;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            font-size: 16px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            color: #626262;
+        }
+
+        @media (max-width: 768px) {
+            .header{
+                width: 92%;
+            }
+            .grid-container-0 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 24px;
+            }
+
+            .grid-item-0 {
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .item-0-1 img {
+                width: 150px;
+            }
+
+            .pair {
+                align-items: center;
+                text-align: center;
+            }
+
+            .grid-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 24px;
+            }
+
+            .grid-item {
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .content {
+                padding: 20px 10px;
+            }
+
+            .blue-rect {
+                left: 0 !important;
+            }
+            .footer{
+                text-align: center !important;
+            }
+        }
+
+        .action {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .action button {
+            background-color: #0068ac;
+            border: none;
+            padding: 10px 16px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1.3333333;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-container">
+            <img src="./assets/pak_visa_logo.png" alt="pak visa logo" width="190">
+            <div class="menu-container">
+                <img src="./assets/menu.svg" alt="menu" width="40" id="logo">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="reference-number">
+                <h3>Visa Reference Number - 88006104784</h3>
+            </div>
+            <div class="horizontal-line"><span></span></div>
+            <div class="grid-container-0">
+                <!-- First column: full height -->
+                <div class="grid-item-0 item-0-1">
+                    <img src="./assets/person.gif" alt="pak visa logo" width="150">
+                </div>
+
+                <!-- Second column: label-value pairs -->
+                <div class="grid-item-0 pair">
+                    <div class="label">NAME</div>
+                    <div class="value">Akbari Mohammad Zia</div>
+                </div>
+                <div class="grid-item-0 pair">
+                    <div class="label font-bold">Passport No</div>
+                    <div class="value">P05910199</div>
+                </div>
+
+                <!-- Third column: label-value pairs -->
+                <div class="grid-item-0 pair">
+                    <div class="label font-bold">Passport Country</div>
+                    <div class="value">Afghanistan</div>
+                </div>
+                <div class="grid-item-0 pair">
+                    <div class="label">Visa Category</div>
+                    <div class="value">Tourist/Visit</div>
+                </div>
+            </div>
+
+            <!-- SECOND GRID PAIRED -->
+            <div class="grid-container">
+                <div class="grid-item pair">
+                    <div class="label">Visa Sub Category</div>
+                    <div class="value">Individual (upto 6 Months)</div>
+                </div>
+                <div class="grid-item pair">
+                    <div class="label">Application Type</div>
+                    <div class="value">Entry</div>
+                </div>
+                <div class="grid-item pair">
+                    <div class="label">Staying Facility</div>
+                    <div class="value">Single Entry - Upto 1 Year</div>
+                </div>
+                <div class="grid-item pair">
+                    <div class="label">Visa Start Date</div>
+                    <div class="value">25 Dec 2025</div>
+                </div>
+                <div class="grid-item pair">
+                    <div class="label">Visa End Date</div>
+                    <div class="value">24 May 2025</div>
+                </div>
+                <div class="grid-item pair">
+                    <div class="label">Visa Duration</div>
+                    <div class="value">60 day(s)</div>
+                </div>
+            </div>
+
+            <div class="action">
+                <button id="backButton">Back to login</button>
+            </div>
+
+            <div class="blue-rect"></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <p>COPYRIGHT © 2015 - 2025 MINISTRY OF INTERIOR, GOVERNMENT OF PAKISTAN - v: 5.5.4</p>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById('backButton').addEventListener('click', function () {
+            window.open('https://visa.nadra.gov.pk/e-visa/authenticate', '_self');
+        });
+        
+        document.getElementById('logo').addEventListener('click', function () {
+            window.open('https://visa.nadra.gov.pk/e-visa/welcome', '_self');
+        });
+
+        function generateReferenceNumber() {
+            return Math.floor(10000000000 + Math.random() * 90000000000);
+        }
+        console.log("reference number: ", generateReferenceNumber());
+    </script>
+</body>
+</html>
